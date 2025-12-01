@@ -1,0 +1,204 @@
+{
+  "users": {
+    "user": {
+      "_id": "507f1f77bcf86cd799439011",
+      "name": "João Silva",
+      "email": "joao.silva@email.com",
+      "password": "$2a$10$hashedPasswordExample123456789",
+      "role": "user",
+      "phone": "(11) 99999-9999",
+      "bio": "Cidadão engajado em melhorar a comunidade local.",
+      "socialMedia": {
+        "facebook": "https://facebook.com/joaosilva",
+        "twitter": "https://twitter.com/joaosilva",
+        "linkedin": null,
+        "instagram": "https://instagram.com/joaosilva"
+      },
+      "lastLogin": "2024-01-15T10:30:00.000Z",
+      "createdAt": "2024-01-01T08:00:00.000Z",
+      "updatedAt": "2024-01-15T10:30:00.000Z"
+    },
+    "admin": {
+      "_id": "507f1f77bcf86cd799439012",
+      "name": "Admin Sistema",
+      "email": "admin@resolveai.com",
+      "password": "$2a$10$hashedPasswordAdmin123456789",
+      "role": "admin",
+      "phone": "(11) 88888-8888",
+      "bio": "Administrador da plataforma Resolve Aí.",
+      "socialMedia": {},
+      "lastLogin": "2024-01-15T14:00:00.000Z",
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-15T14:00:00.000Z"
+    }
+  },
+
+  "categories": [
+    {
+      "_id": "507f1f77bcf86cd799439021",
+      "name": "Infraestrutura",
+      "description": "Problemas relacionados a infraestrutura urbana como buracos, calçadas, iluminação",
+      "active": true,
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439022",
+      "name": "Segurança",
+      "description": "Relatos sobre segurança pública e áreas de risco",
+      "active": true,
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439023",
+      "name": "Meio Ambiente",
+      "description": "Questões ambientais como poluição, descarte irregular, áreas verdes",
+      "active": true,
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439024",
+      "name": "Saúde",
+      "description": "Problemas relacionados a saúde pública",
+      "active": true,
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439025",
+      "name": "Transporte",
+      "description": "Questões de transporte público e mobilidade urbana",
+      "active": true,
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "507f1f77bcf86cd799439026",
+      "name": "Outros",
+      "description": "Categoria desativada para relatos diversos",
+      "active": false,
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-10T00:00:00.000Z"
+    }
+  ],
+
+  "reports": {
+    "pending": {
+      "_id": "507f1f77bcf86cd799439031",
+      "title": "Buraco na Rua das Flores",
+      "description": "Existe um buraco grande na Rua das Flores, próximo ao número 150. O buraco está causando acidentes e danos aos veículos que passam pelo local.",
+      "imageUrl": "https://storage.resolveai.com/images/buraco-rua-flores.jpg",
+      "date": "2024-01-14T00:00:00.000Z",
+      "location": {
+        "address": "Rua das Flores, 150",
+        "city": "São Paulo",
+        "state": "SP",
+        "country": "Brasil"
+      },
+      "category": "507f1f77bcf86cd799439021",
+      "organizer": "507f1f77bcf86cd799439011",
+      "status": "inactive",
+      "approvalStatus": "pending",
+      "approvedBy": null,
+      "approvalDate": null,
+      "rejectionReason": null,
+      "tags": ["buraco", "asfalto", "trânsito"],
+      "createdAt": "2024-01-14T09:00:00.000Z",
+      "updatedAt": "2024-01-14T09:00:00.000Z"
+    },
+    "approved": {
+      "_id": "507f1f77bcf86cd799439032",
+      "title": "Iluminação pública queimada",
+      "description": "As lâmpadas da iluminação pública da Avenida Brasil estão queimadas há mais de uma semana. A falta de iluminação está gerando insegurança para os moradores.",
+      "imageUrl": "https://storage.resolveai.com/images/lampada-queimada.jpg",
+      "date": "2024-01-10T00:00:00.000Z",
+      "location": {
+        "address": "Avenida Brasil, 500-600",
+        "city": "São Paulo",
+        "state": "SP",
+        "country": "Brasil"
+      },
+      "category": "507f1f77bcf86cd799439021",
+      "organizer": "507f1f77bcf86cd799439011",
+      "status": "active",
+      "approvalStatus": "approved",
+      "approvedBy": "507f1f77bcf86cd799439012",
+      "approvalDate": "2024-01-10T14:30:00.000Z",
+      "rejectionReason": null,
+      "tags": ["iluminação", "segurança", "noite"],
+      "createdAt": "2024-01-10T10:00:00.000Z",
+      "updatedAt": "2024-01-10T14:30:00.000Z"
+    },
+    "rejected": {
+      "_id": "507f1f77bcf86cd799439033",
+      "title": "Teste de relato",
+      "description": "Este é apenas um teste do sistema de relatos.",
+      "imageUrl": null,
+      "date": "2024-01-12T00:00:00.000Z",
+      "location": {
+        "address": "Endereço de Teste, 123",
+        "city": "São Paulo",
+        "state": "SP",
+        "country": "Brasil"
+      },
+      "category": "507f1f77bcf86cd799439026",
+      "organizer": "507f1f77bcf86cd799439011",
+      "status": "inactive",
+      "approvalStatus": "rejected",
+      "approvedBy": "507f1f77bcf86cd799439012",
+      "approvalDate": "2024-01-12T16:00:00.000Z",
+      "rejectionReason": "Relato não representa um problema real. Por favor, utilize a plataforma apenas para relatar problemas urbanos reais.",
+      "tags": [],
+      "createdAt": "2024-01-12T15:00:00.000Z",
+      "updatedAt": "2024-01-12T16:00:00.000Z"
+    },
+    "admin_created": {
+      "_id": "507f1f77bcf86cd799439034",
+      "title": "Descarte irregular de lixo",
+      "description": "Há um ponto de descarte irregular de lixo e entulho no terreno baldio da Rua dos Pinheiros. O local está atraindo animais e gerando mau cheiro.",
+      "imageUrl": "https://storage.resolveai.com/images/lixo-irregular.jpg",
+      "date": "2024-01-15T00:00:00.000Z",
+      "location": {
+        "address": "Rua dos Pinheiros, terreno baldio próximo ao 300",
+        "city": "São Paulo",
+        "state": "SP",
+        "country": "Brasil"
+      },
+      "category": "507f1f77bcf86cd799439023",
+      "organizer": "507f1f77bcf86cd799439012",
+      "status": "active",
+      "approvalStatus": "approved",
+      "approvedBy": "507f1f77bcf86cd799439012",
+      "approvalDate": "2024-01-15T11:00:00.000Z",
+      "rejectionReason": null,
+      "tags": ["lixo", "meio ambiente", "saúde"],
+      "createdAt": "2024-01-15T11:00:00.000Z",
+      "updatedAt": "2024-01-15T11:00:00.000Z"
+    },
+    "canceled": {
+      "_id": "507f1f77bcf86cd799439035",
+      "title": "Vazamento de água",
+      "description": "Vazamento de água na esquina da Rua Augusta com Alameda Santos. Água jorrando há 2 dias.",
+      "imageUrl": null,
+      "date": "2024-01-08T00:00:00.000Z",
+      "location": {
+        "address": "Rua Augusta esquina com Alameda Santos",
+        "city": "São Paulo",
+        "state": "SP",
+        "country": "Brasil"
+      },
+      "category": "507f1f77bcf86cd799439021",
+      "organizer": "507f1f77bcf86cd799439011",
+      "status": "canceled",
+      "approvalStatus": "approved",
+      "approvedBy": "507f1f77bcf86cd799439012",
+      "approvalDate": "2024-01-08T10:00:00.000Z",
+      "rejectionReason": null,
+      "tags": ["água", "vazamento", "urgente"],
+      "createdAt": "2024-01-08T08:00:00.000Z",
+      "updatedAt": "2024-01-09T15:00:00.000Z"
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "metadata": {
+    "database": "MongoDB",
+    "type": "NoSQL Document Database",
+    "project": "Resolve Aí",
+    "version": "1.0.0",
+    "description": "Plataforma para relatos de problemas urbanos"
+  },
+
+  "relationships": {
+    "users_to_reports": {
+      "type": "one-to-many",
+      "from": "users",
+      "to": "reports",
+      "foreignField": "organizer",
+      "description": "Um usuário pode criar vários relatos"
+    },
+    "users_to_approved_reports": {
+      "type": "one-to-many",
+      "from": "users",
+      "to": "reports",
+      "foreignField": "approvedBy",
+      "description": "Um admin pode aprovar/rejeitar vários relatos"
+    },
+    "categories_to_reports": {
+      "type": "one-to-many",
+      "from": "categories",
+      "to": "reports",
+      "foreignField": "category",
+      "description": "Uma categoria pode ter vários relatos"
+    }
+  },
+
+  "relationships_diagram": [
+    "┌─────────────┐         ┌──────────────┐",
+    "│   USERS     │         │  CATEGORIES  │",
+    "├─────────────┤         ├──────────────┤",
+    "│ _id (PK)    │         │ _id (PK)     │",
+    "│ name        │         │ name         │",
+    "│ email       │         │ description  │",
+    "│ password    │         │ active       │",
+    "│ role        │         └──────┬───────┘",
+    "│ phone       │                │",
+    "│ bio         │                │ 1:N",
+    "│ socialMedia │                │",
+    "│ lastLogin   │                │",
+    "└──────┬──────┘                │",
+    "       │                       │",
+    "       │ 1:N                   │",
+    "       │                       │",
+    "       ▼                       ▼",
+    "┌─────────────────────────────────────┐",
+    "│              REPORTS                │",
+    "├─────────────────────────────────────┤",
+    "│ _id (PK)                            │",
+    "│ title                               │",
+    "│ description                         │",
+    "│ imageUrl                            │",
+    "│ date                                │",
+    "│ location { address, city, state }   │",
+    "│ category (FK → categories._id)      │",
+    "│ organizer (FK → users._id)          │",
+    "│ status                              │",
+    "│ approvalStatus                      │",
+    "│ approvedBy (FK → users._id)         │",
+    "│ approvalDate                        │",
+    "│ rejectionReason                     │",
+    "│ tags []                             │",
+    "└─────────────────────────────────────┘"
+  ],
+
+  "status_definitions": {
+    "approvalStatus": {
+      "pending": "Aguardando aprovação de um admin",
+      "approved": "Aprovado por um admin",
+      "rejected": "Rejeitado por um admin (com motivo obrigatório)"
+    },
+    "status": {
+      "inactive": "Relato inativo (pendente de aprovação ou rejeitado)",
+      "active": "Relato ativo e visível publicamente",
+      "canceled": "Cancelado pelo próprio usuário que criou",
+      "finished": "Problema foi resolvido"
+    }
+  },
+
+  "approval_flow": {
+    "user_creates_report": [
+      "1. Usuário comum cria relato",
+      "2. approvalStatus = 'pending'",
+      "3. status = 'inactive'",
+      "4. Relato aguarda aprovação de admin"
+    ],
+    "admin_approves": [
+      "1. Admin visualiza relatos pendentes",
+      "2. Admin aprova o relato",
+      "3. approvalStatus = 'approved'",
+      "4. status = 'active'",
+      "5. approvedBy = admin._id",
+      "6. approvalDate = data atual"
+    ],
+    "admin_rejects": [
+      "1. Admin visualiza relatos pendentes",
+      "2. Admin rejeita o relato com motivo",
+      "3. approvalStatus = 'rejected'",
+      "4. status = 'inactive'",
+      "5. approvedBy = admin._id",
+      "6. approvalDate = data atual",
+      "7. rejectionReason = motivo informado"
+    ],
+    "admin_creates_report": [
+      "1. Admin cria relato",
+      "2. Auto-aprovação automática",
+      "3. approvalStatus = 'approved'",
+      "4. status = 'active'",
+      "5. approvedBy = próprio admin"
+    ],
+    "user_cancels_report": [
+      "1. Usuário cancela próprio relato",
+      "2. status = 'canceled'",
+      "3. approvalStatus permanece inalterado"
+    ]
+  },
+
+  "business_rules": {
+    "users": [
+      "Email deve ser único no sistema",
+      "Senha é armazenada com hash bcrypt",
+      "Role pode ser 'user' ou 'admin'",
+      "Apenas admins podem aprovar/rejeitar relatos",
+      "Apenas admins podem gerenciar categorias"
+    ],
+    "categories": [
+      "Nome deve ser único",
+      "Categorias inativas não aparecem para usuários comuns",
+      "Não é possível excluir categoria com relatos associados"
+    ],
+    "reports": [
+      "Relatos de usuários comuns precisam de aprovação",
+      "Relatos de admins são auto-aprovados",
+      "Apenas o dono ou admin pode editar/excluir relato",
+      "Rejeição requer motivo obrigatório",
+      "Usuário pode cancelar apenas seus próprios relatos"
+    ]
+  },
+
+  "virtuals": {
+    "users": {
+      "organizedReports": "Lista de relatos criados pelo usuário (via populate)"
+    },
+    "reports": {
+      "isApproved": "Boolean que indica se o relato está aprovado"
+    }
+  }
+}

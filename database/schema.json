@@ -1,0 +1,191 @@
+{
+  "collections": {
+    "users": {
+      "description": "Coleção de usuários do sistema",
+      "schema": {
+        "_id": "ObjectId",
+        "name": {
+          "type": "String",
+          "required": true,
+          "minlength": 2,
+          "maxlength": 100
+        },
+        "email": {
+          "type": "String",
+          "required": true,
+          "unique": true,
+          "format": "email"
+        },
+        "password": {
+          "type": "String",
+          "required": true,
+          "minlength": 6,
+          "note": "Hash bcrypt"
+        },
+        "role": {
+          "type": "String",
+          "enum": ["user", "admin"],
+          "default": "user"
+        },
+        "phone": {
+          "type": "String",
+          "required": false,
+          "format": "phone"
+        },
+        "bio": {
+          "type": "String",
+          "required": false,
+          "maxlength": 500
+        },
+        "socialMedia": {
+          "type": "Object",
+          "properties": {
+            "facebook": "String",
+            "twitter": "String",
+            "linkedin": "String",
+            "instagram": "String"
+          }
+        },
+        "lastLogin": {
+          "type": "Date",
+          "default": null
+        },
+        "createdAt": "Date (auto)",
+        "updatedAt": "Date (auto)"
+      },
+      "indexes": [
+        { "field": "email", "type": "unique" },
+        { "field": "role", "type": "index" }
+      ]
+    },
+
+    "categories": {
+      "description": "Coleção de categorias para classificar relatos",
+      "schema": {
+        "_id": "ObjectId",
+        "name": {
+          "type": "String",
+          "required": true,
+          "unique": true,
+          "minlength": 2,
+          "maxlength": 50
+        },
+        "description": {
+          "type": "String",
+          "required": false,
+          "maxlength": 200
+        },
+        "active": {
+          "type": "Boolean",
+          "default": true
+        },
+        "createdAt": "Date (auto)",
+        "updatedAt": "Date (auto)"
+      },
+      "indexes": [
+        { "field": "name", "type": "unique" }
+      ]
+    },
+
+    "reports": {
+      "description": "Coleção de relatos de problemas urbanos",
+      "schema": {
+        "_id": "ObjectId",
+        "title": {
+          "type": "String",
+          "required": true,
+          "minlength": 3,
+          "maxlength": 100
+        },
+        "description": {
+          "type": "String",
+          "required": true,
+          "minlength": 10
+        },
+        "imageUrl": {
+          "type": "String",
+          "required": false,
+          "format": "url",
+          "default": null
+        },
+        "date": {
+          "type": "Date",
+          "required": true
+        },
+        "location": {
+          "type": "Object",
+          "required": true,
+          "properties": {
+            "address": {
+              "type": "String",
+              "required": true
+            },
+            "city": {
+              "type": "String",
+              "required": true
+            },
+            "state": {
+              "type": "String",
+              "required": true
+            },
+            "country": {
+              "type": "String",
+              "required": true,
+              "default": "Brasil"
+            }
+          }
+        },
+        "category": {
+          "type": "ObjectId",
+          "ref": "categories",
+          "required": true
+        },
+        "organizer": {
+          "type": "ObjectId",
+          "ref": "users",
+          "required": true
+        },
+        "status": {
+          "type": "String",
+          "enum": ["active", "canceled", "finished", "inactive"],
+          "default": "inactive"
+        },
+        "approvalStatus": {
+          "type": "String",
+          "enum": ["pending", "approved", "rejected"],
+          "default": "pending"
+        },
+        "approvedBy": {
+          "type": "ObjectId",
+          "ref": "users",
+          "default": null
+        },
+        "approvalDate": {
+          "type": "Date",
+          "default": null
+        },
+        "rejectionReason": {
+          "type": "String",
+          "default": null
+        },
+        "tags": {
+          "type": "Array<String>"
+        },
+        "createdAt": "Date (auto)",
+        "updatedAt": "Date (auto)"
+      },
+      "indexes": [
+        { "field": "date", "type": "index" },
+        { "field": "category", "type": "index" },
+        { "field": "status", "type": "index" },
+        { "field": "approvalStatus", "type": "index" },
+        { "field": "organizer", "type": "index" },
+        { "field": "location.city", "type": "index" },
+        { "field": "location.state", "type": "index" },
+        { "field": "location.country", "type": "index" },
+        { "field": "tags", "type": "index" },
+        { "fields": ["title", "description", "location.address"], "type": "text" }
+      ]
+    }
+  }
+}
