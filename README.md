@@ -631,7 +631,6 @@ Com base no feedback recebido, foram implementados os seguintes ajustes:
 | Nome | Matrícula | Função |
 |------|-----------|--------|
 | Edney Vasconcelos Freitas | 2326253 | Lider Técnico / Desenvolvedor |
-| Felipe Sousa da Silva | 2323817 | Analise de requisitos |
 | Mary Ruth de Almeida Freitas Silva | 2327185 | Documentação e testes |
 | Mateus Bruno Trigueiro | 2325500 | Desenvolvedor |
 | Raquel Gonçalves Do Carmo Santana | 2326635 | Documentação e testes |

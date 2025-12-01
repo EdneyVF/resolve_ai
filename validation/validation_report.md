@@ -235,7 +235,6 @@ A validação em ambiente real (condomínio dos desenvolvedores) proporcionou um
 | Nome | Matrícula |
 |------|-----------|
 | Edney Vasconcelos Freitas | 2326253 |
-| Felipe Sousa da Silva | 2323817 |
 | Mary Ruth de Almeida Freitas Silva | 2327185 |
 | Mateus Bruno Trigueiro | 2325500 |
 | Raquel Gonçalves Do Carmo Santana | 2326635 |
