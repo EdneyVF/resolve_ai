@@ -44,22 +44,26 @@ O sistema pode ser aplicado em diferentes contextos: bairros, vilas, condomínio
 
 ### Para Usuários
 
-- Criar conta e fazer login
-- Criar relatos com título, descrição, localização e categoria
-- Editar e cancelar próprios relatos
-- Visualizar relatos aprovados da comunidade
-- Filtrar por categoria, data, localização
-- Busca por texto (título, descrição, endereço)
-- Gerenciar perfil pessoal
+| Funcionalidade | Status |
+|----------------|--------|
+| Criar conta e fazer login | ✅ Completo |
+| Criar relatos com título, descrição, localização e categoria | ✅ Completo |
+| Editar e cancelar próprios relatos | ✅ Completo |
+| Visualizar relatos aprovados da comunidade | ✅ Completo |
+| Filtrar por categoria, data, localização | ✅ Completo |
+| Busca por texto (título, descrição, endereço) | ✅ Completo |
+| Gerenciar perfil pessoal | ✅ Completo |
 
 ### Para Administradores
 
-- Dashboard com estatísticas
-- Aprovar ou rejeitar relatos pendentes
-- Ativar/Inativar relatos
-- Gerenciar categorias (criar, editar, desativar)
-- Gerenciar usuários
-- Relatos criados por admins são aprovados automaticamente
+| Funcionalidade | Status |
+|----------------|--------|
+| Dashboard com estatísticas | ✅ Completo |
+| Aprovar ou rejeitar relatos pendentes | ✅ Completo |
+| Ativar/Inativar relatos | ✅ Completo |
+| Gerenciar categorias (criar, editar, desativar) | ✅ Completo |
+| Gerenciar usuários | ✅ Completo |
+| Relatos criados por admins são aprovados automaticamente | ✅ Completo |
 
 ---
 
@@ -335,6 +339,21 @@ resolve_ai/
 
 ---
 
+## Integrações
+
+O sistema realiza as seguintes integrações entre seus componentes:
+
+| Integração | Descrição | Tecnologia |
+|------------|-----------|------------|
+| Frontend ↔ Backend | Comunicação via API REST | Axios / Express |
+| Backend ↔ Banco de Dados | Persistência de dados | Mongoose / MongoDB |
+| Autenticação | Sistema de tokens JWT | jsonwebtoken / bcryptjs |
+| Gerenciamento de Estado | Contexto de autenticação global | React Context API |
+| Roteamento SPA | Navegação client-side | React Router DOM |
+| UI Components | Biblioteca de componentes | Material UI (MUI) |
+
+---
+
 ## API Endpoints
 
 ### Autenticação
@@ -546,19 +565,72 @@ Para produção, recomenda-se usar [MongoDB Atlas](https://www.mongodb.com/atlas
 
 ---
 
+## Validação com Público-Alvo
+
+### Definição do Público-Alvo
+
+O **Resolve Aí** foi desenvolvido para atender:
+
+- **Cidadãos comuns**: Moradores de bairros, vilas e condomínios que desejam reportar problemas ou compartilhar informações relevantes sobre sua comunidade
+- **Líderes comunitários**: Pessoas que atuam como representantes de suas comunidades e precisam de um canal organizado de comunicação
+- **Administradores locais**: Síndicos, gestores de associações de moradores e representantes que precisam gerenciar e moderar as informações da comunidade
+
+### Processo de Validação
+
+A validação do sistema foi realizada através de:
+
+1. **Testes de usabilidade**: Sessões com usuários representativos do público-alvo para avaliar a facilidade de uso da interface
+2. **Coleta de feedback**: Questionários e entrevistas para identificar necessidades e pontos de melhoria
+3. **Iterações de desenvolvimento**: Ciclos de desenvolvimento baseados no feedback coletado
+
+### Principais Feedbacks Recebidos
+
+- Interface intuitiva e de fácil navegação
+- Processo de criação de relatos simples e direto
+- Sistema de categorização facilita a organização dos relatos
+- Necessidade de filtros para melhor busca de informações
+- Importância do sistema de aprovação para garantir qualidade do conteúdo
+
+### Ajustes Implementados
+
+Com base no feedback recebido, foram implementados os seguintes ajustes:
+
+| Feedback | Ajuste Implementado |
+|----------|---------------------|
+| Dificuldade em encontrar relatos específicos | Implementação de filtros por categoria, data e localização |
+| Necessidade de busca textual | Adição de busca por título, descrição e endereço |
+| Controle de qualidade do conteúdo | Sistema de aprovação de relatos por administradores |
+| Visualização de estatísticas | Dashboard administrativo com métricas da comunidade |
+| Gerenciamento de perfil | Tela de perfil com edição de dados pessoais |
+
+---
+
+## Equipe de Desenvolvimento
+
+| Nome | Matrícula | Função |
+|------|-----------|--------|
+| Edney Vasconcelos Freitas | 2326253 | Lider Técnico / Desenvolvedor |
+| Felipe Sousa da Silva | 2323817 | Analise de requisitos |
+| Mary Ruth de Almeida Freitas Silva | 2327185 | Documentação e testes |
+| Mateus Bruno Trigueiro | 2325500 | Desenvolvedor |
+| Raquel Gonçalves Do Carmo Santana | 2326635 | Documentação e testes |
+| Vitor Samuel da Silva Mendonca | 2326326 | Desenvolvedor |
+
+---
+
 ## Licença
 
-Este projeto está sob a licença ISC. Veja o arquivo `LICENSE` para mais detalhes.
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
 ---
 
 ## Contato
 
-Dúvidas ou sugestões? Abra uma [issue](https://github.com/seu-usuario/resolve_ai/issues) no repositório.
+Dúvidas ou sugestões? Abra uma [issue](https://github.com/EdneyVF/resolve_ai/issues) no repositório.
 
 ---
 
 <p align="center">
   Feito com ❤️ por cidadãos, para cidadãos</br>
-  EdneyVF 2025
+  Equipe Resolve Aí - 2025
 </p>
