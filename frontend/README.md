@@ -29,8 +29,8 @@ Resolve Aí é uma plataforma web moderna para criação e gerenciamento de rela
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/EdneyVF/resolveai-frontend.git
-   cd relator_frontend
+   git clone https://github.com/EdneyVF/resolve_ai.git
+   cd resolve_ai/frontend
    ```
 
 2. Instale as dependências:

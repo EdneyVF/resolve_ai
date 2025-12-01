@@ -11,11 +11,11 @@ O Resolve Aí é uma plataforma colaborativa que visa melhorar a qualidade de vi
 
 O sistema conta com workflow de aprovação por administradores para garantir a qualidade dos relatos publicados.
 
-## 🌐 Produção
+## 🌐 Aplicação
 
-A API está disponível em: **[https://api.resolveai.com.br](https://placeholder-url.com)**
+A aplicação está disponível em: **[https://resolve-ai-ruby.vercel.app/](https://resolve-ai-ruby.vercel.app/)**
 
-> *Nota: URL de produção será atualizada após deploy*
+Repositório: **[https://github.com/EdneyVF/resolve_ai](https://github.com/EdneyVF/resolve_ai)**
 
 ## 🚀 Funcionalidades
 
@@ -67,8 +67,8 @@ A API está disponível em: **[https://api.resolveai.com.br](https://placeholder
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/EdneyVF/resolveai-backend.git
-cd resolveai-backend
+git clone https://github.com/EdneyVF/resolve_ai.git
+cd resolve_ai/backend
 ```
 
 2. Instale as dependências:

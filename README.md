@@ -19,10 +19,8 @@
 </p>
 
 <p align="center">
-  <a href="https://placeholder-url.com"><strong>🌐 Acessar Aplicação</strong></a>
+  <a href="https://resolve-ai-ruby.vercel.app/"><strong>🌐 Acessar Aplicação</strong></a>
 </p>
-
-> *Nota: URL de produção será atualizada após deploy*
 
 ---
 
