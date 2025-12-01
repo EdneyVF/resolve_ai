@@ -334,6 +334,13 @@ resolve_ai/
 │   ├── schema.json             # Schema das coleções
 │   ├── documentation.json      # Regras de negócio
 │   └── samples.json            # Exemplos de dados
+├── validation/                 # Validação com público-alvo
+│   ├── target_audience.md      # Definição do público-alvo
+│   ├── validation_report.md    # Relatório de validação
+│   └── evidence/
+│       └── ResolveAi - Review.mp4  # Vídeo de apresentação
+├── feedback/                   # Feedbacks de usuários
+│   └── user_feedback.md        # Depoimentos anônimos
 └── README.md                   # Este arquivo
 ```
 
@@ -520,6 +527,8 @@ Após executar `npm run seed` no backend, você terá acesso aos seguintes usuá
 
 Para informações detalhadas sobre o sistema, consulte:
 
+### Documentação do Sistema
+
 | Documento | Descrição |
 |-----------|-----------|
 | [Arquitetura do Sistema](docs/architecture/architecture.md) | Estrutura, padrões de design e decisões técnicas |
@@ -527,6 +536,20 @@ Para informações detalhadas sobre o sistema, consulte:
 | [Schema do Banco](database/schema.json) | Estrutura detalhada das coleções MongoDB |
 | [Documentação do Banco](database/documentation.json) | Relacionamentos e regras de negócio |
 | [Exemplos de Dados](database/samples.json) | Exemplos de documentos para cada coleção |
+
+### Validação com Público-Alvo
+
+| Documento | Descrição |
+|-----------|-----------|
+| [Definição do Público-Alvo](validation/target_audience.md) | Identificação e caracterização do público-alvo |
+| [Relatório de Validação](validation/validation_report.md) | Feedbacks, críticas e melhorias implementadas |
+| [Feedbacks de Usuários](feedback/user_feedback.md) | Depoimentos anônimos dos usuários do sistema |
+
+### Apresentação do Sistema
+
+| Arquivo | Descrição |
+|---------|-----------|
+| [Vídeo de Apresentação](validation/evidence/ResolveAi%20-%20Review.mp4) | Demonstração completa das funcionalidades do sistema |
 
 ---
 
